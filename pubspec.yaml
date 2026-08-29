@@ -1,0 +1,35 @@
+name: dogum_cantasi
+description: "Doğum çantası hazırlama, hatırlatma ve paylaşma modülü (offline, sunucusuz)."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Yerel veritabanı: madde listesini kalıcı saklamak için (bkz. README -> "Neden sqflite?")
+  sqflite: ^2.3.3+1
+  # sqflite'ın dosya yolunu bulmak için işletim sistemi bağımsız yol birleştirme
+  path: ^1.9.0
+  # Veritabanı dosyasının cihazda nereye yazılacağını bulmak için (uygulama belgeler dizini)
+  path_provider: ^2.1.3
+
+  # Hatırlatıcı ekranı için yerel (sunucusuz) bildirim planlama
+  flutter_local_notifications: ^17.2.2
+  # flutter_local_notifications'ın zamanlanmış bildirimleri saat dilimine göre doğru tetiklemesi için zorunlu
+  timezone: ^0.9.4
+
+  # Özet ekranındaki "eksik maddeler" metnini WhatsApp/SMS/e-posta gibi dış uygulamalara paylaşmak için
+  share_plus: ^10.1.4
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
