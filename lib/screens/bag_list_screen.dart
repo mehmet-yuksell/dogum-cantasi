@@ -122,8 +122,19 @@ class _BagListScreenState extends State<BagListScreen>
                       }
                       return ListView.builder(
                         padding: const EdgeInsets.only(bottom: AppSpacing.xxl),
-                        itemCount: categoryItems.length,
+                        itemCount: categoryItems.length + 1,
                         itemBuilder: (context, index) {
+                          // Listenin sonunda küçük imza
+                          if (index == categoryItems.length) {
+                            return const Padding(
+                              padding: EdgeInsets.only(top: AppSpacing.lg),
+                              child: Text(
+                                'Mehmet Yüksel · 2026',
+                                textAlign: TextAlign.center,
+                                style: AppTypography.caption,
+                              ),
+                            );
+                          }
                           final item = categoryItems[index];
                           return ItemTile(
                             item: item,
